@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile - Beam</title>
+    <meta name="description" content="See the user's profile page." />
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/toggleMenu.js" defer></script>
+    <script src="../js/toggleFollowersFollowing.js" defer></script>
+    <script src="https://kit.fontawesome.com/39adc5ba14.js" crossorigin="anonymous"></script>
+  </head>
+  <body class="bg-gray-100 flex flex-col min-h-screen">
+    <header class="bg-white text-black shadow-md">
+      <nav class="container mx-auto py-2 px-3">
+        <div class="flex justify-between">
+          <a href="/" class="flex items-center py-4 px-2">
+            <img src="../images/logo.png" alt="Logo" class="w-48" />
+          </a>
+          <div class="hidden md:flex items-center w-60 lg:w-96">
+            <form class="w-full">
+              <input type="search" class="w-full bg-gray-200 rounded-lg py-1 px-2" placeholder="Search" />
+            </form>
+          </div>
+          <div class="hidden md:flex items-center space-x-1">
+            <a href="/" class="py-4 px-2 font-semibold hover:text-orange-600 hover:border-b-2 hover:border-b-orange-600 transition duration-300">Log in</a>
+            <a href="../feed" class="py-4 px-2 font-semibold hover:text-orange-600 hover:border-b-2 hover:border-b-orange-600 transition duration-300">Feed</a>
+            <a href="../profile" class="py-4 px-2 font-semibold border-b-2 text-orange-600 border-b-orange-600">Profile</a>
+          </div>
+
+          <div class="flex md:hidden item-center">
+            <button id="menu-button">
+              <svg class="w-6 h-6 text-gray-500 hover:text-orange-600" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                <path d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="hidden" id="mobile-menu">
+          <div class="flex items-center w-full">
+            <form class="w-full">
+              <input type="search" class="w-full bg-gray-200 rounded-lg py-2 px-2 text-sm" placeholder="Search" />
+            </form>
+          </div>
+          <ul>
+            <li>
+              <a href="/" class="block text-sm py-4 px-2 hover:bg-orange-600 hover:text-white transition duration-300">Log In</a>
+            </li>
+            <li>
+              <a href="../feed" class="block text-sm py-4 px-2 hover:bg-orange-600 hover:text-white transition duration-300">Feed</a>
+            </li>
+            <li>
+              <a href="../profile" class="block text-sm py-4 px-2 bg-orange-600 text-white font-semibold">Profile</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="container mx-auto flex flex-col md:flex-row flex-1 gap-4 p-3">
+      <section class="flex flex-col gap-4 md:w-4/6 lg:w-3/4">
+        <div class="w-full flex flex-col gap-6 bg-white shadow-md rounded-md p-3">
+          <div class="flex flex-col md:flex-row gap-6 md:gap-8 lg:gap-12">
+            <div class="flex-1">
+              <div class="flex justify-center items-center w-32 h-32 md:w-36 md:h-36 lg:w-44 lg:h-44 rounded-full border-orange-500 border-solid border-4 mx-auto">
+                <div class="bg-red-700 rounded-full w-28 md:w-32 lg:w-40 h-28 md:h-32 lg:h-40"></div>
+              </div>
+            </div>
+            <div class="flex flex-col gap-7">
+              <div class="flex flex-col gap-2">
+                <h1 class="font-bold text-xl md:text-2xl mx-auto md:mx-0">John Doe</h1>
+                <p class="md:text-lg">This is where the BIO text will appear if the user has chosen to write a bio. If the user hasn't written a bio, then this section will be empty.</p>
+              </div>
+              <div class="flex justify-around text-lg md:text-xl">
+                <div class="flex flex-col items-center">
+                  <span>35</span>
+                  <span>posts</span>
+                </div>
+                <div class="flex justify-around">
+                  <div class="flex flex-col items-center">
+                    <span>276</span>
+                    <span>followers</span>
+                  </div>
+                </div>
+                <div class="flex justify-around">
+                  <div class="flex flex-col items-center">
+                    <span>463</span>
+                    <span>following</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex gap-5 justify-between">
+            <button class="flex-1 max-w-80 text-white font-bold p-2.5 rounded-full bg-gradient-to-r from-red-600 to-orange-500 transition duration-100 hover:from-red-700 hover:to-orange-600">
+              Follow
+            </button>
+            <button class="w-11 bg-gray-200 rounded-md hover:cursor-pointer hover:bg-gray-300 transition duration-300">
+              <i class="fa-regular fa-paper-plane"></i>
+            </button>
+          </div>
+        </div>
+        <div class="w-full bg-white shadow-md rounded-md p-3">
+          <div class="flex flex-col gap-4">
+            <div class="flex gap-2">
+              <div class="bg-red-700 w-10 h-10 rounded-full"></div>
+              <div class="flex flex-col">
+                <span class="text-sm font-bold">John Doe</span>
+                <span class="text-xs">17th November 2024</span>
+              </div>
+            </div>
+            <p>
+              This is the post text. This will be whatever the user post by using the "create new post" form. If the user hasn't posted anything, then this will not be there. Now there is text here to
+              test the element to see how it will look with some amount of text on different screen sizes.
+            </p>
+          </div>
+        </div>
+        <div class="w-full bg-white shadow-md rounded-md p-3">
+          <div class="flex flex-col gap-4">
+            <div class="flex gap-2">
+              <div class="bg-red-700 w-10 h-10 rounded-full"></div>
+              <div class="flex flex-col">
+                <span class="text-sm font-bold">John Doe</span>
+                <span class="text-xs">17th November 2024</span>
+              </div>
+            </div>
+            <p>
+              This is the post text. This will be whatever the user post by using the "create new post" form. If the user hasn't posted anything, then this will not be there. Now there is text here to
+              test the element to see how it will look with some amount of text on different screen sizes.
+            </p>
+          </div>
+        </div>
+        <div class="w-full bg-white shadow-md rounded-md p-3">
+          <div class="flex flex-col gap-4">
+            <div class="flex gap-2">
+              <div class="bg-red-700 w-10 h-10 rounded-full"></div>
+              <div class="flex flex-col">
+                <span class="text-sm font-bold">John Doe</span>
+                <span class="text-xs">17th November 2024</span>
+              </div>
+            </div>
+            <p>
+              This is the post text. This will be whatever the user post by using the "create new post" form. If the user hasn't posted anything, then this will not be there. Now there is text here to
+              test the element to see how it will look with some amount of text on different screen sizes.
+            </p>
+          </div>
+        </div>
+        <div class="w-full bg-white shadow-md rounded-md p-3">
+          <div class="flex flex-col gap-4">
+            <div class="flex gap-2">
+              <div class="bg-red-700 w-10 h-10 rounded-full"></div>
+              <div class="flex flex-col">
+                <span class="text-sm font-bold">John Doe</span>
+                <span class="text-xs">17th November 2024</span>
+              </div>
+            </div>
+            <p>
+              This is the post text. This will be whatever the user post by using the "create new post" form. If the user hasn't posted anything, then this will not be there. Now there is text here to
+              test the element to see how it will look with some amount of text on different screen sizes.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="md:w-2/6 lg:w-1/4">
+        <div class="flex flex-col gap-5 w-full bg-white shadow-md rounded-md p-3">
+          <div class="flex justify-around gap-2 text-lg">
+            <h2 id="followers-select" class="underline hover:cursor-pointer hover:underline">Followers</h2>
+            <h2 id="following-select" class="hover:cursor-pointer hover:underline">Following</h2>
+          </div>
+          <div id="followers" class="flex flex-col gap-3">
+            <div class="flex items-center gap-5 rounded-md p-2 hover:bg-gray-200 hover:cursor-pointer">
+              <div class="bg-red-700 w-10 h-10 rounded-full"></div>
+              <span>John Doe</span>
+            </div>
+            <div class="flex items-center gap-5 rounded-md p-2 hover:bg-gray-200 hover:cursor-pointer">
+              <div class="bg-red-700 w-10 h-10 rounded-full"></div>
+              <span>John Doe</span>
+            </div>
+            <div class="flex items-center gap-5 rounded-md p-2 hover:bg-gray-200 hover:cursor-pointer">
+              <div class="bg-red-700 w-10 h-10 rounded-full"></div>
+              <span>John Doe</span>
+            </div>
+            <div class="flex items-center gap-5 rounded-md p-2 hover:bg-gray-200 hover:cursor-pointer">
+              <div class="bg-red-700 w-10 h-10 rounded-full"></div>
+              <span>John Doe</span>
+            </div>
+            <div class="flex items-center gap-5 rounded-md p-2 hover:bg-gray-200 hover:cursor-pointer">
+              <div class="bg-red-700 w-10 h-10 rounded-full"></div>
+              <span>John Doe</span>
+            </div>
+            <div class="flex items-center gap-5 rounded-md p-2 hover:bg-gray-200 hover:cursor-pointer">
+              <div class="bg-red-700 w-10 h-10 rounded-full"></div>
+              <span>John Doe</span>
+            </div>
+            <div class="flex items-center gap-5 rounded-md p-2 hover:bg-gray-200 hover:cursor-pointer">
+              <div class="bg-red-700 w-10 h-10 rounded-full"></div>
+              <span>John Doe</span>
+            </div>
+          </div>
+          <div id="following" class="hidden flex-col gap-3">
+            <div class="flex items-center gap-5 rounded-md p-2 hover:bg-gray-200 hover:cursor-pointer">
+              <div class="bg-red-700 w-10 h-10 rounded-full"></div>
+              <span>John Doe</span>
+            </div>
+            <div class="flex items-center gap-5 rounded-md p-2 hover:bg-gray-200 hover:cursor-pointer">
+              <div class="bg-red-700 w-10 h-10 rounded-full"></div>
+              <span>John Doe</span>
+            </div>
+            <div class="flex items-center gap-5 rounded-md p-2 hover:bg-gray-200 hover:cursor-pointer">
+              <div class="bg-red-700 w-10 h-10 rounded-full"></div>
+              <span>John Doe</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="text-center p-2 h-12">&copy; 2024 Beam</footer>
+  </body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feed - Beam</title>
+    <meta name="description" content="See other user's posts." />
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/toggleMenu.js" defer></script>
+    <script src="https://kit.fontawesome.com/39adc5ba14.js" crossorigin="anonymous"></script>
+  </head>
+  <body class="bg-gray-100 flex flex-col min-h-screen">
+    <header class="bg-white text-black shadow-md">
+      <nav class="container mx-auto py-2 px-3">
+        <div class="flex justify-between">
+          <a href="/" class="flex items-center py-4 px-2">
+            <img src="../images/logo.png" alt="Logo" class="w-48" />
+          </a>
+          <div class="hidden md:flex items-center w-60 lg:w-96">
+            <form class="w-full">
+              <input type="search" class="w-full bg-gray-200 rounded-lg py-1 px-2" placeholder="Search" />
+            </form>
+          </div>
+          <div class="hidden md:flex items-center space-x-1">
+            <a href="/" class="py-4 px-2 font-semibold hover:text-orange-600 hover:border-b-2 hover:border-b-orange-600 transition duration-300">Log in</a>
+            <a href="../feed" class="py-4 px-2 font-semibold border-b-2 text-orange-600 border-b-orange-600">Feed</a>
+            <a href="../profile" class="py-4 px-2 font-semibold hover:text-orange-600 hover:border-b-2 hover:border-b-orange-600 transition duration-300">Profile</a>
+          </div>
+
+          <div class="flex md:hidden item-center">
+            <button id="menu-button">
+              <svg class="w-6 h-6 text-gray-500 hover:text-orange-600" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                <path d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="hidden" id="mobile-menu">
+          <div class="flex items-center w-full">
+            <form class="w-full">
+              <input type="search" class="w-full bg-gray-200 rounded-lg py-2 px-2 text-sm" placeholder="Search" />
+            </form>
+          </div>
+          <ul>
+            <li>
+              <a href="/" class="block text-sm py-4 px-2 hover:bg-orange-600 hover:text-white transition duration-300">Log In</a>
+            </li>
+            <li>
+              <a href="../feed" class="block text-sm py-4 px-2 bg-orange-600 text-white font-semibold">Feed</a>
+            </li>
+            <li>
+              <a href="../profile" class="block text-sm py-4 px-2 hover:bg-orange-600 hover:text-white transition duration-300">Profile</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="container mx-auto flex flex-col md:flex-row flex-1 gap-4 p-3">
+      <section class="flex flex-col gap-4 md:w-4/6 lg:w-3/4">
+        <div class="w-full bg-white shadow-md rounded-md p-3">
+          <form class="w-full flex flex-col gap-4">
+            <div class="flex flex-col gap-2">
+              <label for="post" class="font-bold text-lg">Create new post</label>
+              <textarea id="post" class="border-solid border-black border-2 rounded-md p-3 focus:h-40" placeholder="What's cooking?"></textarea>
+            </div>
+            <button class="max-w-80 text-white font-bold py-2.5 px-5 rounded-md bg-gradient-to-r from-red-600 to-orange-500 transition duration-100 hover:from-red-700 hover:to-orange-600">
+              Publish
+            </button>
+          </form>
+        </div>
+        <div class="flex flex-col gap-5 w-full bg-white shadow-md rounded-md p-3 md:hidden">
+          <h2 class="text-lg">Sorting</h2>
+          <form class="flex flex-col gap-1">
+            <div class="flex gap-1">
+              <input type="radio" id="newtolate" name="sorting" value="newtolate" checked />
+              <label for="newtolate">Newest to latest</label>
+            </div>
+            <div class="flex gap-1">
+              <input type="radio" id="latetonew" name="sorting" value="latetonew" />
+              <label for="latetonew">Latest to newest</label>
+            </div>
+          </form>
+        </div>
+        <div class="w-full bg-white shadow-md rounded-md p-3">
+          <div class="flex flex-col gap-4">
+            <div class="flex gap-2">
+              <div class="bg-red-700 w-10 h-10 rounded-full"></div>
+              <div class="flex flex-col">
+                <span class="text-sm font-bold">John Doe</span>
+                <span class="text-xs">17th November 2024</span>
+              </div>
+            </div>
+            <p>
+              This is the post text. This will be whatever the user post by using the "create new post" form. If the user hasn't posted anything, then this will not be there. Now there is text here to
+              test the element to see how it will look with some amount of text on different screen sizes.
+            </p>
+          </div>
+        </div>
+        <div class="w-full bg-white shadow-md rounded-md p-3">
+          <div class="flex flex-col gap-4">
+            <div class="flex gap-2">
+              <div class="bg-red-700 w-10 h-10 rounded-full"></div>
+              <div class="flex flex-col">
+                <span class="text-sm font-bold">John Doe</span>
+                <span class="text-xs">17th November 2024</span>
+              </div>
+            </div>
+            <p>
+              This is the post text. This will be whatever the user post by using the "create new post" form. If the user hasn't posted anything, then this will not be there. Now there is text here to
+              test the element to see how it will look with some amount of text on different screen sizes.
+            </p>
+          </div>
+        </div>
+        <div class="w-full bg-white shadow-md rounded-md p-3">
+          <div class="flex flex-col gap-4">
+            <div class="flex gap-2">
+              <div class="bg-red-700 w-10 h-10 rounded-full"></div>
+              <div class="flex flex-col">
+                <span class="text-sm font-bold">John Doe</span>
+                <span class="text-xs">17th November 2024</span>
+              </div>
+            </div>
+            <p>
+              This is the post text. This will be whatever the user post by using the "create new post" form. If the user hasn't posted anything, then this will not be there. Now there is text here to
+              test the element to see how it will look with some amount of text on different screen sizes.
+            </p>
+          </div>
+        </div>
+        <div class="w-full bg-white shadow-md rounded-md p-3">
+          <div class="flex flex-col gap-4">
+            <div class="flex gap-2">
+              <div class="bg-red-700 w-10 h-10 rounded-full"></div>
+              <div class="flex flex-col">
+                <span class="text-sm font-bold">John Doe</span>
+                <span class="text-xs">17th November 2024</span>
+              </div>
+            </div>
+            <p>
+              This is the post text. This will be whatever the user post by using the "create new post" form. If the user hasn't posted anything, then this will not be there. Now there is text here to
+              test the element to see how it will look with some amount of text on different screen sizes.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="hidden md:block md:w-2/6 lg:w-1/4">
+        <div class="flex flex-col gap-5 w-full bg-white shadow-md rounded-md p-3">
+          <h2 class="text-lg">Sorting</h2>
+          <form class="flex flex-col gap-1">
+            <div class="flex gap-1">
+              <input type="radio" id="newtolate" name="sorting" value="newtolate" checked />
+              <label for="newtolate">Newest to latest</label>
+            </div>
+            <div class="flex gap-1">
+              <input type="radio" id="latetonew" name="sorting" value="latetonew" />
+              <label for="latetonew">Latest to newest</label>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer class="text-center p-2 h-12">&copy; 2024 Beam</footer>
+  </body>
+</html>
