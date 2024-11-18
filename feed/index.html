@@ -17,11 +17,6 @@
           <a href="/" class="flex items-center py-4 px-2">
             <img src="../images/logo.png" alt="Logo" class="w-48" />
           </a>
-          <div class="hidden md:flex items-center w-60 lg:w-96">
-            <form class="w-full">
-              <input type="search" class="w-full bg-gray-200 rounded-lg py-1 px-2" placeholder="Search" />
-            </form>
-          </div>
           <div class="hidden md:flex items-center space-x-1">
             <a href="/" class="py-4 px-2 font-semibold hover:text-orange-600 hover:border-b-2 hover:border-b-orange-600 transition duration-300">Log in</a>
             <a href="../feed" class="py-4 px-2 font-semibold border-b-2 text-orange-600 border-b-orange-600">Feed</a>
@@ -37,11 +32,6 @@
           </div>
         </div>
         <div class="hidden" id="mobile-menu">
-          <div class="flex items-center w-full">
-            <form class="w-full">
-              <input type="search" class="w-full bg-gray-200 rounded-lg py-2 px-2 text-sm" placeholder="Search" />
-            </form>
-          </div>
           <ul>
             <li>
               <a href="/" class="block text-sm py-4 px-2 hover:bg-orange-600 hover:text-white transition duration-300">Log In</a>
@@ -56,114 +46,99 @@
         </div>
       </nav>
     </header>
-    <main class="container mx-auto flex flex-col md:flex-row flex-1 gap-4 p-3">
-      <section class="flex flex-col gap-4 md:w-4/6 lg:w-3/4">
-        <div class="w-full bg-white shadow-md rounded-md p-3">
+    <main class="container mx-auto flex flex-col flex-1 gap-4 p-3">
+      <h1 class="font-bold text-lg">Feed</h1>
+      <section class="flex flex-col lg:flex-row gap-4">
+        <div class="lg:w-3/4 bg-white shadow-md rounded-md p-3">
           <form class="w-full flex flex-col gap-4">
             <div class="flex flex-col gap-2">
-              <label for="post" class="font-bold text-lg">Create new post</label>
-              <textarea id="post" class="border-solid border-black border-2 rounded-md p-3 focus:h-40" placeholder="What's cooking?"></textarea>
+              <h2 class="font-bold text-lg">Create new post</h2>
+              <label for="title" class="font-bold">Title</label>
+              <input type="text" class="border-solid border-black outline-none border-2 rounded-md p-2 focus:border-orange-600" placeholder="Post name" required />
+              <label for="image" class="font-bold">Upload image</label>
+              <input type="file" class="border-solid border-black outline-none border-2 rounded-md p-2 focus:border-orange-600" required />
+              <label for="description" class="font-bold">Description</label>
+              <textarea id="post" class="border-solid border-black outline-none border-2 rounded-md p-2 focus:h-40 focus:border-orange-600" placeholder="Post description"></textarea>
             </div>
             <button class="max-w-80 text-white font-bold py-2.5 px-5 rounded-md bg-gradient-to-r from-red-600 to-orange-500 transition duration-100 hover:from-red-700 hover:to-orange-600">
               Publish
             </button>
           </form>
         </div>
-        <div class="flex flex-col gap-5 w-full bg-white shadow-md rounded-md p-3 md:hidden">
-          <h2 class="text-lg">Sorting</h2>
-          <form class="flex flex-col gap-1">
-            <div class="flex gap-1">
-              <input type="radio" id="newtolate" name="sorting" value="newtolate" checked />
-              <label for="newtolate">Newest to latest</label>
-            </div>
-            <div class="flex gap-1">
-              <input type="radio" id="latetonew" name="sorting" value="latetonew" />
-              <label for="latetonew">Latest to newest</label>
-            </div>
-          </form>
-        </div>
-        <div class="w-full bg-white shadow-md rounded-md p-3">
-          <div class="flex flex-col gap-4">
-            <div class="flex gap-2">
-              <div class="bg-red-700 w-10 h-10 rounded-full"></div>
-              <div class="flex flex-col">
-                <span class="text-sm font-bold">John Doe</span>
-                <span class="text-xs">17th November 2024</span>
-              </div>
-            </div>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eros risus, tempor eget nunc et, sagittis venenatis sapien. Donec sed est non arcu molestie dignissim. Duis cursus feugiat
-              nisl eget feugiat. Curabitur congue ante quis leo luctus interdum. Integer purus ipsum, aliquet quis vehicula non, gravida sed diam. Aliquam eu neque at diam feugiat efficitur. Vivamus
-              tincidunt magna vel blandit semper. Vestibulum auctor consectetur metus sit amet commodo. Sed vel justo augue. Donec et finibus odio. Ut et nisi elit. Quisque tempor imperdiet feugiat.
-              Sed quam ipsum, gravida id nibh eu, suscipit pharetra est. Nam et mattis metus.
-            </p>
+        <div class="flex flex-col gap-4 w-full lg:w-1/4">
+          <div class="flex flex-col gap-5 bg-white shadow-md rounded-md p-3 h-fit">
+            <h2 class="text-lg">Search</h2>
+            <form class="flex flex-col gap-1">
+              <label for="search" class="font-bold">Search for posts</label>
+              <input type="text" class="border-solid border-black outline-none border-2 rounded-md p-2 focus:border-orange-600" id="search" placeholder="Enter search word" required />
+            </form>
           </div>
-        </div>
-        <div class="w-full bg-white shadow-md rounded-md p-3">
-          <div class="flex flex-col gap-4">
-            <div class="flex gap-2">
-              <div class="bg-red-700 w-10 h-10 rounded-full"></div>
-              <div class="flex flex-col">
-                <span class="text-sm font-bold">John Doe</span>
-                <span class="text-xs">17th November 2024</span>
+          <div class="flex flex-col gap-5 bg-white shadow-md rounded-md p-3 h-fit">
+            <h2 class="text-lg">Sorting</h2>
+            <form class="flex flex-col gap-1">
+              <div class="flex gap-1">
+                <input type="radio" id="newtolate" name="sorting" value="newtolate" checked />
+                <label for="newtolate">Newest to latest</label>
               </div>
-            </div>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eros risus, tempor eget nunc et, sagittis venenatis sapien. Donec sed est non arcu molestie dignissim. Duis cursus feugiat
-              nisl eget feugiat. Curabitur congue ante quis leo luctus interdum. Integer purus ipsum, aliquet quis vehicula non, gravida sed diam. Aliquam eu neque at diam feugiat efficitur. Vivamus
-              tincidunt magna vel blandit semper. Vestibulum auctor consectetur metus sit amet commodo. Sed vel justo augue. Donec et finibus odio. Ut et nisi elit. Quisque tempor imperdiet feugiat.
-              Sed quam ipsum, gravida id nibh eu, suscipit pharetra est. Nam et mattis metus.
-            </p>
-          </div>
-        </div>
-        <div class="w-full bg-white shadow-md rounded-md p-3">
-          <div class="flex flex-col gap-4">
-            <div class="flex gap-2">
-              <div class="bg-red-700 w-10 h-10 rounded-full"></div>
-              <div class="flex flex-col">
-                <span class="text-sm font-bold">John Doe</span>
-                <span class="text-xs">17th November 2024</span>
+              <div class="flex gap-1">
+                <input type="radio" id="latetonew" name="sorting" value="latetonew" />
+                <label for="latetonew">Latest to newest</label>
               </div>
-            </div>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eros risus, tempor eget nunc et, sagittis venenatis sapien. Donec sed est non arcu molestie dignissim. Duis cursus feugiat
-              nisl eget feugiat. Curabitur congue ante quis leo luctus interdum. Integer purus ipsum, aliquet quis vehicula non, gravida sed diam. Aliquam eu neque at diam feugiat efficitur. Vivamus
-              tincidunt magna vel blandit semper. Vestibulum auctor consectetur metus sit amet commodo. Sed vel justo augue. Donec et finibus odio. Ut et nisi elit. Quisque tempor imperdiet feugiat.
-              Sed quam ipsum, gravida id nibh eu, suscipit pharetra est. Nam et mattis metus.
-            </p>
-          </div>
-        </div>
-        <div class="w-full bg-white shadow-md rounded-md p-3">
-          <div class="flex flex-col gap-4">
-            <div class="flex gap-2">
-              <div class="bg-red-700 w-10 h-10 rounded-full"></div>
-              <div class="flex flex-col">
-                <span class="text-sm font-bold">John Doe</span>
-                <span class="text-xs">17th November 2024</span>
-              </div>
-            </div>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eros risus, tempor eget nunc et, sagittis venenatis sapien. Donec sed est non arcu molestie dignissim. Duis cursus feugiat
-              nisl eget feugiat. Curabitur congue ante quis leo luctus interdum. Integer purus ipsum, aliquet quis vehicula non, gravida sed diam. Aliquam eu neque at diam feugiat efficitur. Vivamus
-              tincidunt magna vel blandit semper. Vestibulum auctor consectetur metus sit amet commodo. Sed vel justo augue. Donec et finibus odio. Ut et nisi elit. Quisque tempor imperdiet feugiat.
-              Sed quam ipsum, gravida id nibh eu, suscipit pharetra est. Nam et mattis metus.
-            </p>
+            </form>
           </div>
         </div>
       </section>
-      <section class="hidden md:block md:w-2/6 lg:w-1/4">
-        <div class="flex flex-col gap-5 w-full bg-white shadow-md rounded-md p-3">
-          <h2 class="text-lg">Sorting</h2>
-          <form class="flex flex-col gap-1">
-            <div class="flex gap-1">
-              <input type="radio" id="newtolate" name="sorting" value="newtolate" checked />
-              <label for="newtolate">Newest to latest</label>
+      <section>
+        <h2 class="font-bold text-lg">Posts</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+          <div class="overflow-hidden relative group hover:cursor-pointer rounded-lg h-64">
+            <img class="absolute top-1 left-1 z-20 w-10 h-10 rounded-full" title="Brody Clayton" src="../images/profile-image.jpg" alt="Brody Clayton's profile picture" />
+            <img src="../images/post1.jpg" alt="Blurry photo of sand" class="rounded-lg shadow-md object-cover group-hover:scale-125 transition duration-300 w-full h-52 group-hover:h-full" />
+            <div class="bg-black bg-opacity-30 w-full h-full z-10 absolute top-0 left-0 justify-center items-center hidden group-hover:flex">
+              <h3 class="text-white font-semibold">Travel to the dunes</h3>
             </div>
-            <div class="flex gap-1">
-              <input type="radio" id="latetonew" name="sorting" value="latetonew" />
-              <label for="latetonew">Latest to newest</label>
+            <h3 class="text-black font-semibold">Travel to the dunes</h3>
+          </div>
+          <div class="overflow-hidden relative group hover:cursor-pointer rounded-lg h-64">
+            <img class="absolute top-1 left-1 z-20 w-10 h-10 rounded-full" title="Brody Clayton" src="../images/profile-image.jpg" alt="Brody Clayton's profile picture" />
+            <img src="../images/post2.jpg" alt="Blurry photo of sand" class="rounded-lg shadow-md object-cover group-hover:scale-125 transition duration-300 w-full h-52 group-hover:h-full" />
+            <div class="bg-black bg-opacity-30 w-full h-full z-10 absolute top-0 left-0 justify-center items-center hidden group-hover:flex">
+              <h3 class="text-white font-semibold">A mindfull place</h3>
             </div>
-          </form>
+            <h3 class="text-black font-semibold">A mindfull place</h3>
+          </div>
+          <div class="overflow-hidden relative group hover:cursor-pointer rounded-lg h-64">
+            <img class="absolute top-1 left-1 z-20 w-10 h-10 rounded-full" title="Brody Clayton" src="../images/profile-image.jpg" alt="Brody Clayton's profile picture" />
+            <img src="../images/post3.jpg" alt="Blurry photo of sand" class="rounded-lg shadow-md object-cover group-hover:scale-125 transition duration-300 w-full h-52 group-hover:h-full" />
+            <div class="bg-black bg-opacity-30 w-full h-full z-10 absolute top-0 left-0 justify-center items-center hidden group-hover:flex">
+              <h3 class="text-white font-semibold">Visiting a new town</h3>
+            </div>
+            <h3 class="text-black font-semibold">Visiting a new town</h3>
+          </div>
+          <div class="overflow-hidden relative group hover:cursor-pointer rounded-lg h-64">
+            <img class="absolute top-1 left-1 z-20 w-10 h-10 rounded-full" title="Brody Clayton" src="../images/profile-image.jpg" alt="Brody Clayton's profile picture" />
+            <img src="../images/post4.jpg" alt="Blurry photo of sand" class="rounded-lg shadow-md object-cover group-hover:scale-125 transition duration-300 w-full h-52 group-hover:h-full" />
+            <div class="bg-black bg-opacity-30 w-full h-full z-10 absolute top-0 left-0 justify-center items-center hidden group-hover:flex">
+              <h3 class="text-white font-semibold">Waterstreams</h3>
+            </div>
+            <h3 class="text-black font-semibold">Waterstreams</h3>
+          </div>
+          <div class="overflow-hidden relative group hover:cursor-pointer rounded-lg h-64">
+            <img class="absolute top-1 left-1 z-20 w-10 h-10 rounded-full" title="Kendall Case" src="../images/profile-image.jpg" alt="Kendall Case's profile picture" />
+            <img src="../images/post5.jpg" alt="Blurry photo of sand" class="rounded-lg shadow-md object-cover group-hover:scale-125 transition duration-300 w-full h-52 group-hover:h-full" />
+            <div class="bg-black bg-opacity-30 w-full h-full z-10 absolute top-0 left-0 justify-center items-center hidden group-hover:flex">
+              <h3 class="text-white font-semibold">Dinner for seven</h3>
+            </div>
+            <h3 class="text-black font-semibold">Dinner for seven</h3>
+          </div>
+          <div class="overflow-hidden relative group hover:cursor-pointer rounded-lg h-64">
+            <img class="absolute top-1 left-1 z-20 w-10 h-10 rounded-full" title="Kendall Case" src="../images/profile-image.jpg" alt="Kendall Case's profile picture" />
+            <img src="../images/post6.jpg" alt="Blurry photo of sand" class="rounded-lg shadow-md object-cover group-hover:scale-125 transition duration-300 w-full h-52 group-hover:h-full" />
+            <div class="bg-black bg-opacity-30 w-full h-full z-10 absolute top-0 left-0 justify-center items-center hidden group-hover:flex">
+              <h3 class="text-white font-semibold">An escape to the wild</h3>
+            </div>
+            <h3 class="text-black font-semibold">An escape to the wild</h3>
+          </div>
         </div>
       </section>
     </main>
