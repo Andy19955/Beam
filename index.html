@@ -12,7 +12,7 @@
   <body class="bg-gray-100 flex flex-col min-h-screen">
     <main class="flex flex-col flex-1 md:relative md:z-10">
       <section class="flex flex-col items-center gap-10 md:gap-14 py-10 md:py-15 px-4 md:px-14 md:w-3/5 md:my-auto">
-        <img src="./images/logo.png" alt="Logo" class="w-full max-w-80" />
+        <img src="./images/logo.png" alt="Beam logo with slogan" class="w-full max-w-80" />
         <h1 class="text-2xl md:text-3xl font-bold">Welcome to Beam</h1>
         <form action="./profile" class="flex flex-col gap-4 w-full">
           <div class="flex flex-col gap-1">
@@ -22,7 +22,7 @@
           <div class="flex flex-col gap-1">
             <label for="password" class="pl-3 font-bold">Password</label>
             <input type="password" id="password" class="px-3 py-1 border-2 border-solid border-orange-400 focus:outline-none rounded-md" minlength="8" autocomplete="current-password" required />
-            <a href="#" class="text-cyan-600 hover:underline text-right">Forgot password?</a>
+            <a href="#" class="text-cyan-700 hover:underline text-right">Forgot password?</a>
           </div>
           <div class="mx-auto">
             <button type="submit" class="w-40 text-white font-bold p-2.5 rounded-full bg-gradient-to-r from-red-600 to-orange-500 transition duration-100 hover:from-red-700 hover:to-orange-600">
@@ -31,7 +31,9 @@
           </div>
         </form>
       </section>
-      <section class="bg-[url('../images/login-background.png')] bg-cover bg-center md:z-1 text-white py-5 lg:py-9 px-5 lg:px-9 md:absolute md:top-0 md:-bottom-10 md:right-0 md:min-h-screen md:w-2/5">
+      <section
+        class="bg-[linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.25)),url('../images/login-background.png')] bg-cover bg-center md:z-1 text-white py-5 lg:py-9 px-5 lg:px-9 md:absolute md:top-0 md:-bottom-10 md:right-0 md:min-h-screen md:w-2/5"
+      >
         <div class="flex flex-col gap-12 h-full justify-center">
           <h2 class="text-3xl lg:text-4xl font-bold">Connect with people the new way</h2>
           <div class="px-4 text-lg lg:text-xl">
